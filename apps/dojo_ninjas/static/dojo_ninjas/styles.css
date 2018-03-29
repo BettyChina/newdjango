@@ -1,0 +1,77 @@
+/*CSS reset settings here*/
+*{
+margin: 10px;
+padding: 10px;
+background-color: paleturquoise;
+background-image:url("img/wall.jpn");
+text-align: left;
+}
+
+h1{
+    text-align: Center;
+    color: silver;
+
+}
+p{
+    text-align: center;
+    color: silver;
+}
+
+
+h2{
+    text-align: center;
+   
+
+}
+
+
+
+label{
+    display:inline-block;
+    width:100px;
+    margin-right:30px;
+    text-align:right;
+    }
+    
+    input{
+       
+        width:100px;
+        margin:0px auto;
+        display: inline;
+    }
+    
+    fieldset{
+    border:none;
+    width:100px;
+    margin:0px auto;
+    }
+   h8{
+       text-align: left;
+   }
+   a{
+       text-align: right;
+       width: 80%
+   }
+   #post{
+    text-align: right;
+    margin: auto;
+    width : 150px;
+   }
+   textarea{
+    text-align: left;  
+   }
+   #msg{
+    text-align: left;  
+    padding-left: 50px;
+    
+   }
+   #topleft{
+    width: 40%;
+    text-align: left;
+    display: inline-block;
+   }
+   #topright{
+    width: 40%;
+    text-align: right;
+    display: inline-block;
+   }

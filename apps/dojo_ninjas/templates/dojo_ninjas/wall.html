@@ -1,0 +1,53 @@
+<html>
+<head>
+   <!-- linking a css style sheet -->
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+   <!-- linking a javascript file -->
+   <!--script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script-->
+   <!-- linking an image -->
+  <title>Login</title>
+</head>
+<body>
+   <div id ="topleft"> <h8 > Coding dojo wall </h8>
+    </div> <div id= "topright"> {{session.user_name}} <a href =""> log out</a></div>
+ 
+      <form action='/post' method='POST'>   
+        <div id="post_box">   
+        <h8>Post a message</h8>
+                    <textarea rows="10" cols="150" name="message" id="message">
+                    </textarea>
+                <!--
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  <ul class=flashes>
+                  {% for message in messages %}
+                    <li>{{ message }}</li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              {% endwith %} -->
+            </div> 
+          <input type="submit" value="POST A MESSAGE" id="post">
+        </form>
+        <!--{{ all_messages }}-->
+        <!-- with all the data we can then construct a more structured output -->
+        {% for message in all_messages: %}
+           <h3>
+             {% for x in all_dbusers: %}
+                {% if x['id'] ==  message['user_id']: %}
+                    {{ x['first_name'] }}  {{ x['last_name'] }} -
+                {% endif %}
+             {% endfor %}   
+          Created at: {{ message['created_at'] }}</h3>
+           <div id = "msg">{{ message['messages'] }}</div>
+           
+        {% endfor %} 
+        <div id="commentpost">
+        <h8>Post a message</h8>
+        <textarea rows="10" cols="150" name="message" id="message">
+        </textarea>
+        </div>>
+
+
+</body>
+</html>

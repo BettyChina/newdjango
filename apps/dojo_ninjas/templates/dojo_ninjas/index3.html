@@ -1,0 +1,31 @@
+<html>
+<head>
+   
+  <title>users</title>
+</head>
+<body>
+    {{ name }}
+        
+  <h2>-- Registration --</h2>
+
+  <form action='/target/process' method='POST'>
+ 
+    <table>
+    <tr><td><label for="first_name">First Name:</td><td><input type="text" name="first_name" id="first_name"></label><td></tr>
+    <tr><td><label for="last_name">Last Name:</td><td><input type="text" name="last_name" id="last_name"></label></tr>
+    <tr><td><label for="email">Email:</td><td><input type="text" name="email" id="email"></label></tr>
+    <tr><td><label for="password">Password:</td><td><input type="text" name="password" id="password"></label></tr>
+    <tr><td><input type="submit" value="Register"></td></tr>
+   </table>
+  </form>
+  <h2>-- Login --</h2>
+  <form action='/login' method='POST'>
+    <label for="email">Email:<input type="text" name="email1" id="email1"></label>
+    <label for="password">Password:<input type="text" name="password1" id="password1"></label>
+   
+    <input type="submit" value="login">
+  </form>
+
+
+</body>
+</html>

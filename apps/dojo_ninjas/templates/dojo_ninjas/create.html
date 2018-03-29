@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Adding a User</title>
+        <meta name="description" content="Login and Registration">
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'dojo_ninjas/css/styles.css' %}">
+       
+    </head>
+    <body>
+     -- create --
+
+            <form action="create" method="POST" class="form-horizontal">
+                {% csrf_token %}
+                
+                <input class="btn btn-default" id="submitbutton" type="submit" value="Add">
+
+
+            </form>
+        </div>
+    </body>
+</html>

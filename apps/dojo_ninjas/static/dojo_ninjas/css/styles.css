@@ -1,0 +1,53 @@
+/*CSS reset settings here*/
+*{
+margin: 10px;
+padding: 10px;
+background-color: paleturquoise;
+text-align: left;
+}
+
+h1{
+    text-align: center;
+    color: silver;
+
+}
+p{
+    text-align: center;
+    color: silver;
+}
+
+form{
+    border-style: solid;
+    border-color: red; 
+    text-align: center;
+
+}
+#leftside{
+
+    text-align: left;
+    display: inline-block;
+    width: 48%;
+    margin: auto;
+    border-style: solid;
+  
+
+    }
+#rightside{
+
+    text-align: right;
+    display: inline-block;
+    width: 48%;
+    margin: auto;
+    border-style: solid;
+  
+       
+           } 
+#logout{
+
+    text-align: right;
+    display: block;
+  
+    margin: auto;
+    
+               
+                   }

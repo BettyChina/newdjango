@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Adding a User</title>
+        <meta name="description" content="Login and Registration">
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'dojo_ninjas/css/styles.css' %}">
+       
+    </head>
+    <body>
+        <div id="wrapper">
+
+            <div id ="logout"> <a href = "{% url 'logout' %} ">Logout</a> </div>
+
+            {% if messages %}
+            <ul class="list-group">
+                {% for message in messages %}
+                <li class="list-group-item list-group-item-success"><h2>{{ message }}</h2></li>
+                {% endfor %}
+                <li class="list-group-item list-group-item-success">Successfully registered (or logged in)!</li>
+            </ul>
+            {% endif %}
+
+
+            <div id= "leftside">
+           <!-- {% for user in users %} -->
+         <!--   <p>   {{user.id}} {{user.first_name}} {{user.last_name}} </p> -->
+         <!--   {% endfor %} -->
+               
+            {% for item in items %}
+              <p>  {{item.id}} {{item.item}} </p>
+             
+              <a href = "{% url 'addtolist' %}">Posted by </a>
+
+             
+              
+                <form action="" method="POST" class="form-horizontal">
+                {% csrf_token %}
+                <p><input class="btn btn-default" id="submitbutton" type="submit" value="Add to my list"></p>
+              </form>
+            {% endfor %}
+            </div>
+
+            <div id= "rightside">
+
+             <form action="{% url 'create' %}" method="POST" >
+                {% csrf_token %}
+                <p> Contribute a Quote </p>
+                     <div>
+                         
+                        <label >Quoted by</label>
+                        <input type="text" name="quoteby" > </div>
+                        <div><label >Message</label>          
+                        <input type="text" name="quote" >
+                    </div>
+                
+                <input class="btn btn-default" id="submitbutton" type="submit" value="Submit">
+
+             </form>
+            </div>
+            
+            
+            <div> 
+
+                    {% for item in myitems %}
+                        {{item.id}} {{item.item}} 
+                        <form action="" method="POST" class="form-horizontal">
+                                {% csrf_token %}      
+                                   
+                                <p><input class="btn btn-default" id="submitbutton" type="submit" value="Remove from my list"></p>
+                              </form>
+                    {% endfor %}
+
+
+
+            </div>
+
+
+        </div >
+    </body>
+</html>
